@@ -219,7 +219,7 @@ class Scoreboard:
             """Called back by the monitor when a new transaction has been
             received."""
 
-            if monitor.name:
+            if hasattr(monitor, "name") and monitor.name:
                 log_name = self.log.name + '.' + monitor.name
             else:
                 log_name = self.log.name + '.' + type(monitor).__qualname__
